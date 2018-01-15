@@ -1,0 +1,38 @@
+
+<div id="home">
+  <div class="row">
+    <div class="medium-4 columns"><img class="large-image" ng-src="{{largeImgUrl}}"/></div>
+    <div class="medium-8 columns">
+      <div class="row">
+        <div class="small-9 columns">
+          <input type="search" placeholder="Search" ng-model="search"/>
+        </div>
+        <div class="small-3 columns"><a class="button full-width" type="button" href="#/create"><i class="fa fa-plus" aria-hidden="true"></i>                    Add</a></div>
+      </div>
+      <div class="reminders-list">
+        <div class="add-reminder-header">
+          <h6 class="header-title">Reminders list</h6>
+        </div>
+        <div class="row add-reminder-section" ng-repeat="item in reminders | descriptionFilter: search" ng-click="show(item.imageUrl)">
+          <div class="small-9 medium-10 columns about-reminder">
+            <div class="about-reminder-avatar"><img class="avatar-image" ng-src="{{item.imageUrl}}" ng-click="setImage(item)"/><i class="fa fa-edit reminder-edit-icon" aria-hidden="true"></i></div>
+            <div class="reminder-description-wrapper">
+              <p class="description">{{item.description}}</p>
+            </div>
+          </div>
+          <div class="small-3 medium-2 columns edit">
+            <div class="edit-action"><a class="button small" ng-class="{secondary: item.status}" href="#/edit/{{item.id}}"><i class="fa fa-edit" aria-hidden="true"></i>                                Edit</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="img-modal" ng-class="{show: showModal}">
+  <div class="modal">
+    <div class="modal-close" ng-click="showModal = false">&#128473</div>
+    <div class="img-wrapper"><img class="modal-image" ng-src="{{modalImgUrl}}"/></div>
+    <input class="modal-input" type="text" placeholder="input URL" ng-model="inputImgUrl"/>
+    <button class="button full-width" type="button" ng-click="updateImg()"><i class="fa fa-exchange" aria-hidden="true"></i>            Update</button>
+  </div>
+</div>

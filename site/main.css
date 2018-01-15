@@ -1,0 +1,218 @@
+@font-face {
+  font-family: empty;
+  src: url(data:application/font-woff;charset=utf-8;base64,d09GRk9UVE8AAAQ0AAoAAAAAA+wAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAA9AAAAJ4AAACeXQ48j09TLzIAAAGUAAAAYAAAAGAIIgbWY21hcAAAAfQAAABEAAAARAAyAGlnYXNwAAACOAAAAAgAAAAIAAAAEGhlYWQAAAJAAAAANgAAADb9mzB5aGhlYQAAAngAAAAkAAAAJAHiAeVobXR4AAACnAAAABAAAAAQAAAAAG1heHAAAAKsAAAABgAAAAYABFAAbmFtZQAAArQAAAFdAAABXVqZXRlwb3N0AAAEFAAAACAAAAAgAAMAAAEABAQAAQEBDHNwYWNlLWVtcHR5AAECAAEAOvgcAvgbA/gYBB4KABlT/4uLHgoAGVP/i4sMB4tr+JT4dAUdAAAAfA8dAAAAgREdAAAACR0AAACVEgAFAQEMFxkbHnNwYWNlLWVtcHR5c3BhY2UtZW1wdHl1MHUxdTIwAAACAYkAAgAEAQEEBwoN/JQO/JQO/JQO/JQO+JQU+JQViwwKAAAAAwIAAZAABQAAAUwBZgAAAEcBTAFmAAAA9QAZAIQAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAABAAAAAIAHg/+D/4AHgACAAAAABAAAAAAAAAAAAAAAgAAAAAAACAAAAAwAAABQAAwABAAAAFAAEADAAAAAIAAgAAgAAAAEAIP/9//8AAAAAACD//f//AAH/4wADAAEAAAAAAAAAAAABAAH//wAPAAEAAAABAAAAeR2GXw889QALAgAAAAAAzz54vgAAAADPPni+AAAAAAAAAAAAAAAIAAIAAAAAAAAAAQAAAeD/4AAAAgAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABQAAAEAAAAAAAOAK4AAQAAAAAAAQAWAAAAAQAAAAAAAgAOAGMAAQAAAAAAAwAWACwAAQAAAAAABAAWAHEAAQAAAAAABQAWABYAAQAAAAAABgALAEIAAQAAAAAACgAoAIcAAwABBAkAAQAWAAAAAwABBAkAAgAOAGMAAwABBAkAAwAWACwAAwABBAkABAAWAHEAAwABBAkABQAWABYAAwABBAkABgAWAE0AAwABBAkACgAoAIcAcwBwAGEAYwBlAC0AZQBtAHAAdAB5AFYAZQByAHMAaQBvAG4AIAAxAC4AMABzAHAAYQBjAGUALQBlAG0AcAB0AHlzcGFjZS1lbXB0eQBzAHAAYQBjAGUALQBlAG0AcAB0AHkAUgBlAGcAdQBsAGEAcgBzAHAAYQBjAGUALQBlAG0AcAB0AHkARwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=) format("woff"); }
+
+html, body {
+  height: 100%; }
+
+html, body {
+  height: auto;
+  min-height: 100vh; }
+
+.full-width {
+  width: 100%; }
+
+.breadcrumbs {
+  padding: .85em 1em;
+  line-height: 1; }
+
+.img-modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7); }
+  .img-modal.show {
+    display: block; }
+  .img-modal .modal {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 300px;
+    height: 410px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #cacaca; }
+    .img-modal .modal .modal-close {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      width: 15px;
+      height: 15px;
+      line-height: 14px;
+      text-align: center;
+      cursor: pointer;
+      color: #0a0a0a;
+      -webkit-transition: .25s ease-out;
+      transition: .25s ease-out; }
+      .img-modal .modal .modal-close:hover {
+        -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+                transform: scale(1.1); }
+    .img-modal .modal .img-wrapper {
+      position: relative;
+      width: 258px;
+      height: 258px;
+      overflow: hidden;
+      margin-bottom: 15px; }
+      .img-modal .modal .img-wrapper .modal-image {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        width: 100%; }
+    .img-modal .modal .modal-input {
+      margin-bottom: 15px; }
+
+#home .large-image {
+  width: 100%; }
+
+#home .reminders-list {
+  background-color: #fefefe;
+  padding: 1rem 0 0;
+  border: 1px solid #cacaca;
+  -webkit-box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
+          box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18); }
+  #home .reminders-list .add-reminder-header {
+    padding: 0 0.9375rem;
+    border-bottom: 0.0625rem solid #cacaca; }
+    #home .reminders-list .add-reminder-header .header-title {
+      font-weight: bold; }
+  #home .reminders-list .add-reminder-section {
+    margin: 1rem 0 0;
+    padding-bottom: 1rem;
+    border-bottom: 0.0625rem solid #cacaca; }
+    #home .reminders-list .add-reminder-section .about-reminder {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: -webkit-box;
+      display: flex;
+      -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+      -webkit-box-align: start;
+              align-items: flex-start; }
+      #home .reminders-list .add-reminder-section .about-reminder .about-reminder-avatar {
+        padding-right: 0.5rem;
+        padding-left: 0;
+        position: relative;
+        cursor: pointer; }
+        #home .reminders-list .add-reminder-section .about-reminder .about-reminder-avatar .reminder-edit-icon {
+          position: absolute;
+          bottom: 2px;
+          right: 9px;
+          color: black;
+          -webkit-transition: opacity .25s ease-out;
+          transition: opacity .25s ease-out;
+          opacity: 0; }
+        #home .reminders-list .add-reminder-section .about-reminder .about-reminder-avatar .avatar-image {
+          width: 5rem;
+          height: 5rem;
+          border: 0.0625rem solid #cacaca; }
+        #home .reminders-list .add-reminder-section .about-reminder .about-reminder-avatar:hover .reminder-edit-icon {
+          opacity: 1; }
+      #home .reminders-list .add-reminder-section .about-reminder .reminder-description-wrapper {
+        -webkit-flex: 1 0 0;
+        -ms-flex: 1 0 0px;
+        -webkit-box-flex: 1;
+                flex: 1 0 0; }
+        #home .reminders-list .add-reminder-section .about-reminder .reminder-description-wrapper .description {
+          color: #0a0a0a;
+          margin: 0.375rem 0 0;
+          font-size: 0.85rem; }
+    #home .reminders-list .add-reminder-section .edit {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: -webkit-box;
+      display: flex;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      -webkit-box-align: center;
+              align-items: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      -webkit-box-pack: center;
+              justify-content: center; }
+      @media screen and (max-width: 39.9375em) {
+        #home .reminders-list .add-reminder-section .edit {
+          -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+          -webkit-box-pack: start;
+                  justify-content: flex-start; } }
+      #home .reminders-list .add-reminder-section .edit .edit-action {
+        margin-top: 0.7rem; }
+
+#create .callout .floated-label-wrapper {
+  margin-bottom: 10px;
+  padding-bottom: 1px; }
+  #create .callout .floated-label-wrapper input {
+    margin-bottom: 5px; }
+  #create .callout .floated-label-wrapper .help-block {
+    text-align: left;
+    color: red;
+    font-size: 14px;
+    margin-bottom: 0; }
+  #create .callout .floated-label-wrapper label {
+    text-align: left; }
+  #create .callout .floated-label-wrapper textarea {
+    resize: none;
+    height: 150px;
+    margin-bottom: 5px; }
+  #create .callout .floated-label-wrapper.switch {
+    text-align: left; }
+
+#create .img-wrapper {
+  position: relative;
+  cursor: pointer; }
+  #create .img-wrapper .right-side-image {
+    width: 100%; }
+  #create .img-wrapper .reminder-edit-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: black;
+    -webkit-transition: opacity .25s ease-out;
+    transition: opacity .25s ease-out;
+    opacity: 0; }
+  #create .img-wrapper:hover .reminder-edit-icon {
+    opacity: 1; }
+
+#edit .callout .floated-label-wrapper {
+  margin-bottom: 10px;
+  padding-bottom: 1px; }
+  #edit .callout .floated-label-wrapper input {
+    margin-bottom: 5px; }
+  #edit .callout .floated-label-wrapper .help-block {
+    text-align: left;
+    color: red;
+    font-size: 14px;
+    margin-bottom: 0; }
+  #edit .callout .floated-label-wrapper label {
+    text-align: left; }
+  #edit .callout .floated-label-wrapper textarea {
+    resize: none;
+    height: 150px;
+    margin-bottom: 5px; }
+  #edit .callout .floated-label-wrapper.switch {
+    text-align: left; }
+
+#edit .img-wrapper {
+  position: relative;
+  cursor: pointer; }
+  #edit .img-wrapper .right-side-image {
+    width: 100%; }
+  #edit .img-wrapper .reminder-edit-icon {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: black;
+    -webkit-transition: opacity .25s ease-out;
+    transition: opacity .25s ease-out;
+    opacity: 0; }
+  #edit .img-wrapper:hover .reminder-edit-icon {
+    opacity: 1; }

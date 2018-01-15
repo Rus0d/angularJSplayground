@@ -1,0 +1,100 @@
+#home {
+  .large-image {
+    width: 100%;
+  }
+
+  .reminders-list {
+    background-color: #fefefe;
+    padding: 1rem 0 0;
+    border: 1px solid #cacaca;
+    box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
+
+    .add-reminder-header {
+      padding: 0 0.9375rem;
+      border-bottom: 0.0625rem solid #cacaca;
+
+      .header-title {
+        font-weight: bold;
+      }
+    }
+
+    .add-reminder-section {
+      margin: 1rem 0 0;
+      padding-bottom: 1rem;
+      border-bottom: 0.0625rem solid #cacaca;
+
+      .about-reminder {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+
+        .about-reminder-avatar {
+          padding-right: 0.5rem;
+          padding-left: 0;
+          position: relative;
+          cursor: pointer;
+
+          .reminder-edit-icon {
+            position: absolute;
+            bottom: 2px;
+            right: 9px;
+            color: black;
+            transition: opacity .25s ease-out;
+            opacity: 0;
+          }
+
+          .avatar-image {
+            width: 5rem;
+            height: 5rem;
+            border: 0.0625rem solid #cacaca;
+          }
+
+          &:hover {
+            .reminder-edit-icon {
+              opacity: 1;
+            }
+          }
+        }
+
+        .reminder-description-wrapper {
+          -webkit-flex: 1 0 0;
+          -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+
+          .description {
+            color: #0a0a0a;
+            margin: 0.375rem 0 0;
+            font-size: 0.85rem;
+          }
+        }
+      }
+
+      .edit {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+
+        @media screen and (max-width: 39.9375em) {
+        & {
+            -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+          }
+        }
+
+        .edit-action {
+          margin-top: 0.7rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+
+<div id="create">
+  <div class="row">
+    <div class="medium-8 columns">
+      <form class="callout text-center" name="reminderForm" ng-submit="create()" novalidate="">
+        <h6>Create reminder</h6>
+        <div class="floated-label-wrapper">
+          <label for="email">Email:</label>
+          <input id="email" type="email" placeholder="input email" name="email" ng-model="item.mail" required=""/>
+          <p class="help-block" ng-show="reminderForm.email.$invalid &amp;&amp; !reminderForm.email.$pristine">Enter a valid email.</p>
+        </div>
+        <div class="floated-label-wrapper">
+          <label for="phone">Phone:</label>
+          <input id="phone" type="tel" name="phone" ui-mask="(999) 999-99-99" placeholder="(___) ___-__-__" ng-model="item.phone" required=""/>
+          <p class="help-block" ng-show="reminderForm.phone.$invalid &amp;&amp; !reminderForm.phone.$pristine">Enter a phone.</p>
+        </div>
+        <div class="floated-label-wrapper">
+          <label for="date">Date:</label>
+          <input id="date" type="date" placeholder="input date" name="date" ng-model="item.date" required=""/>
+          <p class="help-block" ng-show="reminderForm.date.$invalid &amp;&amp; !reminderForm.date.$pristine">Enter a date.</p>
+        </div>
+        <div class="floated-label-wrapper">
+          <label for="description">Description:</label>
+          <textarea id="description" type="text" placeholder="input description" ng-model="item.description"></textarea>
+        </div>
+        <div class="switch tiny floated-label-wrapper">
+          <input class="switch-input" id="tinySwitch" type="checkbox" ng-model="item.status"/>
+          <label class="switch-paddle" for="tinySwitch"><span class="show-for-sr">Tiny Sandwiches Enabled</span></label>
+        </div>
+        <button class="button full-width" type="submit" ng-disabled="reminderForm.$invalid"><i class="fa fa-exchange" aria-hidden="true"></i>                    Update</button>
+      </form>
+    </div>
+    <div class="medium-4 columns">
+      <div class="img-wrapper" ng-click="setImage()"><img class="right-side-image" ng-src="{{item.imageUrl}}"/><i class="fa fa-edit reminder-edit-icon" aria-hidden="true"></i></div>
+    </div>
+  </div>
+</div>
+<div class="img-modal" ng-class="{show: showModal}">
+  <div class="modal">
+    <div class="modal-close" ng-click="showModal = false">&#128473</div>
+    <div class="img-wrapper"><img class="modal-image" ng-src="{{modalImgUrl}}"/></div>
+    <input class="modal-input" type="text" placeholder="input URL" ng-model="inputImgUrl"/>
+    <button class="button full-width" type="button" ng-click="updateImg()"><i class="fa fa-exchange" aria-hidden="true"></i>            Update</button>
+  </div>
+</div>

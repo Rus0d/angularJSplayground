@@ -1,0 +1,40 @@
+#edit
+    .row
+        .medium-8.columns
+            form.callout.text-center(name='reminderForm', ng-submit='update()', novalidate='')
+                h6 Edit reminder
+                .floated-label-wrapper
+                    label(for='email') Email:
+                    input#email(type='email', placeholder='input email', name='email', ng-model='item.mail', required='')
+                    p.help-block(ng-show='reminderForm.email.$invalid && !reminderForm.email.$pristine') Enter a valid email.
+                .floated-label-wrapper
+                    label(for='phone') Phone:
+                    input#phone(type='tel', name='phone', ui-mask='(999) 999-99-99', placeholder='(___) ___-__-__', ng-model='item.phone', required='')
+                    p.help-block(ng-show='reminderForm.phone.$invalid && !reminderForm.phone.$pristine') Enter a phone.
+                .floated-label-wrapper
+                    label(for='date') Date:
+                    input#date(type='date', placeholder='input date', name='date', ng-model='date', required='')
+                    p.help-block(ng-show='reminderForm.date.$invalid && !reminderForm.date.$pristine') Enter a date.
+                .floated-label-wrapper
+                    label(for='description') Description:
+                    textarea#description(type='text', placeholder='input description', ng-model='item.description')
+                .switch.tiny.floated-label-wrapper
+                    input#tinySwitch.switch-input(type='checkbox', ng-model='item.status')
+                    label.switch-paddle(for='tinySwitch')
+                        span.show-for-sr Tiny Sandwiches Enabled
+                button.button.full-width(type='submit', ng-disabled='reminderForm.$invalid')
+                    i.fa.fa-exchange(aria-hidden='true')
+                    |                     Update
+        .medium-4.columns
+            .img-wrapper(ng-click='setImage()')
+                img.right-side-image(ng-src='{{item.imageUrl}}')
+                i.fa.fa-edit.reminder-edit-icon(aria-hidden='true')
+.img-modal(ng-class='{show: showModal}')
+    .modal
+        .modal-close(ng-click='showModal = false') &#128473
+        .img-wrapper
+            img.modal-image(ng-src='{{modalImgUrl}}')
+        input.modal-input(type='text', placeholder='input URL', ng-model='inputImgUrl')
+        button.button.full-width(type='button', ng-click='updateImg()')
+            i.fa.fa-exchange(aria-hidden='true')
+            |             Update

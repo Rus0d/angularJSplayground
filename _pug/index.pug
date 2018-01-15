@@ -1,0 +1,28 @@
+doctype html
+html(lang='en', ng-app='reminderApp')
+    head
+        meta(charset='utf-8')
+        title reminder
+        link(rel='stylesheet', href='vendor_css/foundation.min.css')
+        link(rel='stylesheet', href='vendor_css/foundation-float.min.css')
+        link(rel='stylesheet', href='vendor_css/foundation-prototype.min.css')
+        link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css', rel='stylesheet')
+        link(rel='stylesheet', href='main.css')
+    body(ng-controller='appCtrl')
+        .row.columns
+            nav(aria-label='You are here:', role='navigation')
+                ul.breadcrumbs
+                    li(ng-repeat='item in crumbsArray')
+                        a(href='{{item.link}}') {{item.name}}
+                    li.disabled(ng-if='noEdit') edit
+        .container
+            ng-view
+    script(src='vendor_js/jquery.min.js')
+    script(src='vendor_js/foundation.min.js')
+    script(src='vendor_js/angular.js')
+    script(src='vendor_js/angular-route.js')
+    script(src='vendor_js/angular-resource.js')
+    script(src='vendor_js/mask.js')
+    script(src='./app.js')
+    script.
+        $(document).foundation();

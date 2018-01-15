@@ -1,0 +1,61 @@
+#edit {
+
+  .callout {
+
+    .floated-label-wrapper {
+      margin-bottom: 10px;
+      padding-bottom: 1px;
+
+      input {
+        margin-bottom: 5px;
+      }
+      .help-block {
+        text-align: left;
+        color: red;
+        font-size: 14px;
+        margin-bottom: 0;
+      }
+
+      label {
+        text-align: left;
+      }
+
+      textarea {
+        resize: none;
+        height: 150px;
+        margin-bottom: 5px;
+      }
+
+      &.switch {
+        text-align: left;
+      }
+    }
+  }
+
+  .img-wrapper {
+    position: relative;
+    cursor: pointer;
+
+    .right-side-image {
+      width: 100%;
+    }
+
+    .reminder-edit-icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: black;
+      transition: opacity .25s ease-out;
+      opacity: 0;
+    }
+
+    &:hover {
+      .reminder-edit-icon {
+        opacity: 1;
+      }
+    }
+  }
+
+
+
+}

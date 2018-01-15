@@ -1,0 +1,38 @@
+#home
+    .row
+        .medium-4.columns
+            img.large-image(ng-src='{{largeImgUrl}}')
+        .medium-8.columns
+            .row
+                .small-9.columns
+                    input(type='search', placeholder='Search', ng-model='search')
+                .small-3.columns
+                    a.button.full-width(type='button', href='#/create')
+                        i.fa.fa-plus(aria-hidden='true')
+                        |                     Add
+            .reminders-list
+                .add-reminder-header
+                    h6.header-title
+                        | Reminders list
+                .row.add-reminder-section(ng-repeat='item in reminders | descriptionFilter: search', ng-click='show(item.imageUrl)')
+                    .small-9.medium-10.columns.about-reminder
+                        .about-reminder-avatar
+                            img.avatar-image(ng-src='{{item.imageUrl}}', ng-click='setImage(item)')
+                            i.fa.fa-edit.reminder-edit-icon(aria-hidden='true')
+                        .reminder-description-wrapper
+                            p.description
+                                | {{item.description}}
+                    .small-3.medium-2.columns.edit
+                        .edit-action
+                            a.button.small(ng-class='{secondary: item.status}', href='#/edit/{{item.id}}')
+                                i.fa.fa-edit(aria-hidden='true')
+                                |                                 Edit
+.img-modal(ng-class='{show: showModal}')
+    .modal
+        .modal-close(ng-click='showModal = false') &#128473
+        .img-wrapper
+            img.modal-image(ng-src='{{modalImgUrl}}')
+        input.modal-input(type='text', placeholder='input URL', ng-model='inputImgUrl')
+        button.button.full-width(type='button', ng-click='updateImg()')
+            i.fa.fa-exchange(aria-hidden='true')
+            |             Update
